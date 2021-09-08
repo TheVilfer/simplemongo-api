@@ -1,0 +1,23 @@
+{
+  "name": "simplemongo-api",
+  "version": "1.0.0",
+  "description": "Api for use mongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheVilfer/simplemongo-api.git"
+  },
+  "keywords": [
+    "mongodb",
+    "db",
+    "api"
+  ],
+  "author": "Vilfer",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.1.1"
+  }
+}
