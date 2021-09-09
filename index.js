@@ -45,7 +45,7 @@ module.exports.UpdateOne = async (collection, data, id) => {
   const db = await connectToDatabase(MONGODB_URI);
   let response = await db.collection(collection).updateOne(
     {
-      _id: new mongoUtil.ObjectID(id),
+      _id: new mongoUtil.ObjectId(id),
     },
     {
       $set: data,
@@ -56,9 +56,9 @@ module.exports.UpdateOne = async (collection, data, id) => {
 
 module.exports.ConvertArrayToObjectID = (data) => {
   let query = [];
-  data.forEach((element) => query.push(new mongoUtil.ObjectID(element)));
+  data.forEach((element) => query.push(new mongoUtil.ObjectId(element)));
   return query;
 };
 module.exports.ConvertToObjectID = (data) => {
-  return new mongoUtil.ObjectID(data);
+  return new mongoUtil.ObjectId(data);
 };
