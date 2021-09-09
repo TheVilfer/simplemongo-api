@@ -18,7 +18,7 @@ const connectToDatabase = async (uri) => {
   return cachedDb;
 };
 
-exports.Query = async (collection, data = undefined) => {
+module.exports.Query = async (collection, data = undefined) => {
   const db = await connectToDatabase(MONGODB_URI);
   let response;
   if (data == undefined) {
@@ -32,7 +32,7 @@ exports.Query = async (collection, data = undefined) => {
   return response;
 };
 
-exports.QueryOne = async (collection, data) => {
+module.exports.QueryOne = async (collection, data) => {
   const db = await connectToDatabase(MONGODB_URI);
   let response = await db.collection(collection).findOne(data);
   if (response == null) {
@@ -41,7 +41,7 @@ exports.QueryOne = async (collection, data) => {
   return response;
 };
 
-exports.UpdateOne = async (collection, data, id) => {
+module.exports.UpdateOne = async (collection, data, id) => {
   const db = await connectToDatabase(MONGODB_URI);
   let response = await db.collection(collection).updateOne(
     {
@@ -54,11 +54,11 @@ exports.UpdateOne = async (collection, data, id) => {
   return response;
 };
 
-exports.ConvertArrayToObjectID = (data) => {
+module.exports.ConvertArrayToObjectID = (data) => {
   let query = [];
   data.forEach((element) => query.push(new mongoUtil.ObjectID(element)));
   return query;
 };
-exports.ConvertToObjectID = (data) => {
+module.exports.ConvertToObjectID = (data) => {
   return new mongoUtil.ObjectID(data);
 };
