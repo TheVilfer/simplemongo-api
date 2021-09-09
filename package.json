@@ -1,6 +1,6 @@
 {
   "name": "simplemongo-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Api for use mongoDB",
   "main": "index.js",
   "scripts": {
