@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoUtil = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
 
